@@ -5,6 +5,8 @@ public class Character {
 
     private String name;
 
+    GameMap gm;
+
     public Character(){
         name = "Character";
     }
@@ -24,9 +26,10 @@ public class Character {
         
 //  }
 
-    // public void enterMap(GameMap map){
-    //     System.out.println("Enter Map method");
-    // }
+    public void enterMap(GameMap map){
+        this.gm = map;
+        System.out.println("Enter Map method");
+    }
 
   public Position gePosition(){
     return null;

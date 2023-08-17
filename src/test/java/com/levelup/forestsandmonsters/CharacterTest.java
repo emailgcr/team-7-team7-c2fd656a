@@ -1,6 +1,7 @@
 package com.levelup.forestsandmonsters;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 import org.junit.Test;
 
@@ -30,7 +31,12 @@ public class CharacterTest {
 
     @Test
     public void enterMapTest(){
-        // GameMap gm = new GameMap();
+        GameMap gm = new GameMap();
+        Character ch = new Character();
+
+        ch.enterMap(gm);
+
+        assertNotNull("There is a game map in character", ch.gm);
         System.out.println("WAITING FOR GAMEMAP");
     }
 }
