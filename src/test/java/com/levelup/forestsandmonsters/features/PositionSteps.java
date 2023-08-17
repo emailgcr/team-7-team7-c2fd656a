@@ -8,15 +8,15 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import java.awt.Point; 
 
-public class PostitionSteps {
+public class PositionSteps {
     Point coordinates; 
 
-    @Given("Current coordinates {int}")
+    @Given("Current coordinates {Point}")
     public void givenTheCoordinates(Point coordinates) {
         this.coordinates = coordinates;
     }
 
-     @Then("Current Coordinates {int}")
+     @Then("Current Coordinates {Point}")
     public void checkCurrentCoordinates(Point coordinates) {
         assertNotNull(this.coordinates, "Expected coordinates not null");
         assertEquals(coordinates, this.coordinates);
