@@ -18,6 +18,8 @@ public class PositionTest {
 
         //and no name is given
         assertEquals(4, y);
+
+        assertEquals(new Point(3,4), coordinates); 
     
     }
 
