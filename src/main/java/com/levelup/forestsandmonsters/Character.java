@@ -2,18 +2,21 @@ package com.levelup.forestsandmonsters;
 
 public class Character {
 
+
+    private String name;
+
     public Character(){
-// nAME = "CHARACTER"
+        name = "Character";
     }
     
     public Character(String name){
-
+        this.name = name;
     }
     
 
    public String getName(){
 
-    return "CharName";
+    return this.name;
    }
 
 }
