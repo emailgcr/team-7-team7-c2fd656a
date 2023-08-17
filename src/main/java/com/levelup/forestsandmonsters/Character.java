@@ -19,4 +19,13 @@ public class Character {
     return this.name;
    }
 
+
+//     public void move(Direction direction){
+        
+//  }
+
+  public Position gePosition(){
+    return null;
+  }
+
 }

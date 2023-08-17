@@ -26,7 +26,7 @@ public class GameController {
     }
 
     // Pre-implemented to demonstrate ATDD
-    // TODO: Update this if it does not match your design
+    // TODO: Update this with Character.java method
     public void createCharacter(String name) {
         if (name != null && !name.equals("")) {
             status.characterName = name;

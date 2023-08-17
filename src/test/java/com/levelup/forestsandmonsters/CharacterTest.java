@@ -8,7 +8,7 @@ import org.junit.Test;
 public class CharacterTest {
 
      @Test
-    public void initializationCreatesResults() {
+    public void createCharacterTest() {
         Character noNameAvatar = new Character();
         Character avatar = new Character("CGRyan");
 
@@ -18,6 +18,13 @@ public class CharacterTest {
         //and no name is given
         assertEquals("Character", noNameAvatar.getName());
 
+    }
+
+    @Test
+    public Position getPositionTest(){
+        Character char1 = new Character();
+        
+        return char1.gePosition();
     }
 }
 
