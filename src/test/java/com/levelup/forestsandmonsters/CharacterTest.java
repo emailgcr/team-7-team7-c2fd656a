@@ -1,11 +1,12 @@
 package com.levelup.forestsandmonsters;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import org.junit.Test;
 
 public class CharacterTest {
+
+    
 
      @Test
     public void createCharacterTest() {
@@ -21,10 +22,16 @@ public class CharacterTest {
     }
 
     @Test
-    public Position getPositionTest(){
-        Character char1 = new Character();
+    public void getPositionTest(){
+        // Character char1 = new Character();
         
-        return char1.gePosition();
+        System.out.println("WAITING FOR GAMEMAP");
+    }
+
+    @Test
+    public void enterMapTest(){
+        // GameMap gm = new GameMap();
+        System.out.println("WAITING FOR GAMEMAP");
     }
 }
 

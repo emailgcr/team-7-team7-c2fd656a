@@ -24,6 +24,10 @@ public class Character {
         
 //  }
 
+    // public void enterMap(GameMap map){
+    //     System.out.println("Enter Map method");
+    // }
+
   public Position gePosition(){
     return null;
   }
