@@ -9,9 +9,15 @@ public class CharacterTest {
 
      @Test
     public void initializationCreatesResults() {
-        Character testObj = new Character();
+        Character noNameAvatar = new Character();
         Character avatar = new Character("CGRyan");
-        assertEquals(avatar.getName(),"CharName");
+
+        // and name is given
+        assertEquals("CGRyan", avatar.getName());
+
+        //and no name is given
+        assertEquals("Character", noNameAvatar.getName());
+
     }
 }
 

@@ -2,11 +2,11 @@ package com.levelup.forestsandmonsters;
 
 public class Character {
 
-    Character(){
-
+    public Character(){
+// nAME = "CHARACTER"
     }
     
-    Character(String name){
+    public Character(String name){
 
     }
     
