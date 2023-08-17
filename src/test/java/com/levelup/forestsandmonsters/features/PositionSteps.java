@@ -10,15 +10,28 @@ import java.awt.Point;
 
 public class PositionSteps {
     Point coordinates; 
+    int x;
+    int y;
 
-    @Given("Current coordinates {Point}")
-    public void givenTheCoordinates(Point coordinates) {
-        this.coordinates = coordinates;
+    @Given("You have X coordinate {int}")
+    public void checkXCoordinates(int endX) {
+        this.x = endX;
     }
 
-     @Then("Current Coordinates {Point}")
-    public void checkCurrentCoordinates(Point coordinates) {
+    @Then("You have Y coordinate {int}")
+    public void checkYCoordinates(int endY) {
+        this.y = endY;
+    }
+
+    
+
+     @Then("The user gets coordinates")
+    public void checkCurrentCoordinates(){
+        coordinates = new Point(x, y);
+
         assertNotNull(this.coordinates, "Expected coordinates not null");
-        assertEquals(coordinates, this.coordinates);
+
+        assertEquals(this.x, this.coordinates.x);
+        assertEquals(this.y, this.coordinates.y);
     }
 }

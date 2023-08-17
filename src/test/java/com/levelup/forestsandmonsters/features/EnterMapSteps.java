@@ -11,7 +11,7 @@ public class EnterMapSteps {
         Character ch;
         // GameMap gm;
 
-    @Given("{ string } is created")
+    @Given("{string} is created")
     public void givenTheCharacterIsInitialized(String characterName) {
         ch = new Character(characterName);
     }
