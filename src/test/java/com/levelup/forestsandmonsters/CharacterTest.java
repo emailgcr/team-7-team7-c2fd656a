@@ -38,6 +38,7 @@ public class CharacterTest {
 
         assertNotNull("There is a game map in character", ch.gm);
         System.out.println("WAITING FOR GAMEMAP");
+        
     }
 }
 
