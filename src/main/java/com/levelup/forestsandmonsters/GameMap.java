@@ -2,6 +2,8 @@ package com.levelup.forestsandmonsters;
 
 import java.awt.Point;
 
+import com.levelup.forestsandmonsters.GameController.DIRECTION;
+
 public class GameMap {
     private static final int MAXIMUM_ROW_COUNT = 10;
     private static final int MAXIMUM_COLUMN_COUNT = 10;
@@ -18,6 +20,27 @@ public class GameMap {
     
     private void setPositionCount(Integer count) {
         numPositions = count;
+    }
+
+    public Position calculatePosition(Position startingPosition, DIRECTION direction){
+
+        if(isPositionValid(startingPosition)){
+            switch(direction){
+                case NORTH:
+                    startingPosition.coordinates.y ++;
+                break;
+                case SOUTH:
+                    startingPosition.coordinates.y --;
+                break;
+                case EAST:
+                    startingPosition.coordinates.x ++;
+                break;
+                case WEST:
+                    startingPosition.coordinates.x --;
+                break;
+            }
+        }
+        return startingPosition; 
     }
     
     public GameMap() {
@@ -39,12 +62,12 @@ public class GameMap {
           return positions;
      }
 
-    public boolean isPositionValid(Point point) {
+    public boolean isPositionValid(Position point) {
         boolean isXValid = false;
         boolean isYValid = false;
 
-        isXValid = point.x >= MINIMUM_COLUMN_ID && point.x < MAXIMUM_COLUMN_COUNT;
-        isYValid = point.y >= MINIMUM_ROW_ID && point.y < MAXIMUM_ROW_COUNT; 
+        isXValid = point.coordinates.x >= MINIMUM_COLUMN_ID && point.coordinates.x < MAXIMUM_COLUMN_COUNT;
+        isYValid = point.coordinates.y >= MINIMUM_ROW_ID && point.coordinates.y < MAXIMUM_ROW_COUNT; 
 
         return isXValid && isYValid;
     }     

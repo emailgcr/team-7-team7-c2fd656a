@@ -9,7 +9,7 @@ public class GameController {
     public class GameStatus {
         // TODO: Add other status data
         public String characterName = DEFAULT_CHARACTER_NAME;
-        public Point currentPosition = null;
+        public Point currentPosition = new Point(0, 0);
         // TODO: Write a failing unit test that will force you to set this to the right number
         public int moveCount = -100;
 
@@ -19,6 +19,8 @@ public class GameController {
     }
 
     GameStatus status;
+    Character gCharacter;
+    GameMap gMap;
 
     public GameController() {
         status = new GameStatus();
@@ -32,11 +34,7 @@ public class GameController {
     // Pre-implemented to demonstrate ATDD
     // TODO: Update this with Character.java method
     public void createCharacter(String name) {
-        if (name != null && !name.equals("")) {
-            status.characterName = name;
-        } else {
-            status.characterName = DEFAULT_CHARACTER_NAME;
-        }
+        gCharacter = new Character(name);
     }
 
     public void startGame() {
@@ -52,20 +50,27 @@ public class GameController {
     public void move(DIRECTION directionToMove) {
         // TODO: Implement move - should call something on another class
         // TODO: Should probably also update the game results
+        Position newPos = gCharacter.move(directionToMove);
+        Point newPoint = new Point(newPos.coordinates.x, newPos.coordinates.y);
+        setCharacterPosition(newPoint);
+        setCurrentMoveCount(status.moveCount);
+        status.toString();
     }
 
     public void setCharacterPosition(Point coordinates) {
         // TODO: IMPLEMENT THIS TO SET CHARACTERS CURRENT POSITION -- exists to be testable
+        status.currentPosition = coordinates;
     }
 
     public void setCurrentMoveCount(int moveCount) {
         // TODO: IMPLEMENT THIS TO SET CURRENT MOVE COUNT -- exists to be testable
+        status.moveCount ++;
     }
 
     public int getTotalPositions() {
         // TODO: IMPLEMENT THIS TO GET THE TOTAL POSITIONS FROM THE MAP -- exists to be
         // testable
-        return -10;
+        return gMap.getTotalPositions();
     }
 
 }
