@@ -22,7 +22,7 @@ public class GameMapTest {
     }
 
     @Test
-    public void check_positions_is_10_by_10() {
+    public void check_positions_row_count_and_column_count_are_10() {
         GameMap testObj = new GameMap();
         Position[][] positions = testObj.getPositions();
         int rowCount = positions.length;
@@ -43,19 +43,19 @@ public class GameMapTest {
     }
 
     @Test
-    public void check_position_is_valid_0_10() {
+    public void check_position_is_invalid_0_10() {
         GameMap testObj = new GameMap();
         assertEquals(false, testObj.isPositionValid(new Point(0, 10)));
     }
 
     @Test
-    public void check_position_is_valid_10_0() {
+    public void check_position_is_invalid_10_0() {
         GameMap testObj = new GameMap();
         assertEquals(false, testObj.isPositionValid(new Point(10, 0)));
     }
 
     @Test
-    public void check_position_is_valid_10_10() {
+    public void check_position_is_invalid_10_10() {
         GameMap testObj = new GameMap();
         assertEquals(false, testObj.isPositionValid(new Point(10, 10)));
     }
