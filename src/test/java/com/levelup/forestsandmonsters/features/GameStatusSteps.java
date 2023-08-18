@@ -1,50 +1,51 @@
-// package com.levelup.forestsandmonsters.features;
+package com.levelup.forestsandmonsters.features;
 
-// import static org.junit.jupiter.api.Assertions.assertEquals;
-// import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-// import io.cucumber.java.en.Given;
-// import io.cucumber.java.en.Then;
-// import io.cucumber.java.en.When;
-// import java.awt.Point;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import java.awt.Point;
 
-// public class GameStatusSteps {
-//     String charName;
-//     Point currentPosition;
-//     int moveCount;
+import com.levelup.forestsandmonsters.GameController;
+import com.levelup.forestsandmonsters.GameController.GameStatus;
 
-// @Given("Character Name {string}")
-// public void givenTheCharactersNameIs(String charName) {
-//     this.charName = charName;
-// }
+public class GameStatusSteps {
+    String charName;
+    Point currentPosition;
+    int moveCount;
 
-// @Given("Current Position {point}")
-// public void givenTheCurrentPositionIs(Point currPosition) {
-//     this.currentPosition = currPosition;
-// }
+    GameController gc = new GameController();
+    GameStatus gs = gc.getStatus();
 
-// @Given("Move Count {int}")
-// public void givenTheMoveCountIs(int moveCount) {
-//     this.moveCount = moveCount;
-// }
+@Given("Character Name {string}")
+public void givenTheCharactersNameIs(String charName) {
+    this.gs.characterName = charName;
+}
 
-// @Then("Validate Character Name {string}")
-// public void checkCharacterName(String charName) {
-// assertNotNull(this.charName, "Expected charName not null");
-// assertEquals(charName, this.charName);
-// }
+@And("Current X Position {int} and Y Position {int}")
+public void givenTheCurrentPositionIs(int x, int y) {
+    this.gs.currentPosition = convertXYtoPoint(x, y);
+}
 
-// @Then("Validate Current Position {point}")
-// public void checkCurrentPosition(Point currentPosition) {
-// assertNotNull(this.currentPosition, "Expected currentPosition not null");
-// assertEquals(currentPosition, this.currentPosition);
-// }
+@And("Move Count {int}")
+public void givenTheMoveCountIs(int moveCount) {
+    this.gs.moveCount = moveCount;
+}
 
-// @Then("Validate Move Count {int}")
-// public void checkMoveCount(int moveCount) {
-// assertNotNull(this.moveCount, "Expected moveCount not null");
-// assertEquals(moveCount, this.moveCount);
-// }
+@Then("Validate Character Status {string} {int} {int} {int}")
+public void checkCharacterName(String charName, int x, int y, int moveCount) {
+    assertEquals(charName, this.gs.characterName);
+    Point currentPoint = convertXYtoPoint(x, y); 
+    assertEquals(currentPoint, this.gs.currentPosition);
+    assertEquals(moveCount, this.gs.moveCount);
 
-    
-// }
+}
+
+public Point convertXYtoPoint(int x, int y){
+    Point newPoint = new Point(x, y);
+    return newPoint;
+}    
+}

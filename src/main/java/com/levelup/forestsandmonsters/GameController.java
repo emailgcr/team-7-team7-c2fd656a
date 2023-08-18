@@ -12,6 +12,10 @@ public class GameController {
         public Point currentPosition = null;
         // TODO: Write a failing unit test that will force you to set this to the right number
         public int moveCount = -100;
+
+        public String toString(String name, Point currPos, int moveCount){
+            return "";
+        }
     }
 
     GameStatus status;
