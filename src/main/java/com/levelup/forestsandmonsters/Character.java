@@ -2,36 +2,29 @@ package com.levelup.forestsandmonsters;
 
 public class Character {
 
+  private String name;
 
-    private String name;
+  GameMap gameMap;
 
-    GameMap gm;
+  public Character() {
+    name = "Character";
+  }
 
-    public Character(){
-        name = "Character";
-    }
-    
-    public Character(String name){
-        this.name = name;
-    }
-    
+  public Character(String name) {
+    this.name = name;
+  }
 
-   public String getName(){
+  public String getName() {
 
     return this.name;
-   }
+  }
 
+  public void enterMap(GameMap map) {
+    this.gameMap = map;
+    System.out.println("Enter Map method");
+  }
 
-//     public void move(Direction direction){
-        
-//  }
-
-    public void enterMap(GameMap map){
-        this.gm = map;
-        System.out.println("Enter Map method");
-    }
-
-  public Position gePosition(){
+  public Position gePosition() {
     return null;
   }
 

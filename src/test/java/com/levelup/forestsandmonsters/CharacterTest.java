@@ -7,39 +7,36 @@ import org.junit.Test;
 
 public class CharacterTest {
 
-    
-
-     @Test
+    // Testing create Character object
+    @Test
     public void createCharacterTest() {
         Character noNameAvatar = new Character();
         Character avatar = new Character("CGRyan");
 
-        // and name is given
         assertEquals("CGRyan", avatar.getName());
 
-        //and no name is given
         assertEquals("Character", noNameAvatar.getName());
 
     }
 
+    // Testing GetPosition of Character
+
     @Test
-    public void getPositionTest(){
-        // Character char1 = new Character();
-        
+    public void getPositionTest() {
+
         System.out.println("WAITING FOR GAMEMAP");
     }
 
+    // Testing Enter map
     @Test
-    public void enterMapTest(){
-        GameMap gm = new GameMap();
-        Character ch = new Character();
+    public void enterMapTest() {
+        GameMap gameMap = new GameMap();
+        Character charObj = new Character();
 
-        ch.enterMap(gm);
+        charObj.enterMap(gameMap);
 
-        assertNotNull("There is a game map in character", ch.gm);
+        assertNotNull("There is a game map in character", charObj.gameMap);
         System.out.println("WAITING FOR GAMEMAP");
-        
+
     }
 }
-
-
