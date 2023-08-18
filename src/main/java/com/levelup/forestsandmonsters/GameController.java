@@ -34,7 +34,11 @@ public class GameController {
     // Pre-implemented to demonstrate ATDD
     // TODO: Update this with Character.java method
     public void createCharacter(String name) {
-        gCharacter = new Character(name);
+        if(name == null || name == ""){
+            gCharacter = new Character();
+        }else{
+            gCharacter = new Character(name);
+        }
     }
 
     public void startGame() {

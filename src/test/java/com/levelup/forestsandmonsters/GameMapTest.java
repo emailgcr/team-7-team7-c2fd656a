@@ -3,8 +3,6 @@ package com.levelup.forestsandmonsters;
 import static org.junit.Assert.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-import java.awt.Point;
-
 import org.junit.Test;
 
 public class GameMapTest {
@@ -33,30 +31,30 @@ public class GameMapTest {
     @Test
     public void check_position_is_valid_0_0() {
         GameMap testObj = new GameMap();
-        assertEquals(true, testObj.isPositionValid(new Point(0, 0)));
+        assertEquals(true, testObj.isPositionValid(new Position(0, 0)));
     }
 
     @Test
     public void check_position_is_valid_9_9() {
         GameMap testObj = new GameMap();
-        assertEquals(true, testObj.isPositionValid(new Point(9, 9)));
+        assertEquals(true, testObj.isPositionValid(new Position(9, 9)));
     }
 
     @Test
     public void check_position_is_invalid_0_10() {
         GameMap testObj = new GameMap();
-        assertEquals(false, testObj.isPositionValid(new Point(0, 10)));
+        assertEquals(false, testObj.isPositionValid(new Position(0, 10)));
     }
 
     @Test
     public void check_position_is_invalid_10_0() {
         GameMap testObj = new GameMap();
-        assertEquals(false, testObj.isPositionValid(new Point(10, 0)));
+        assertEquals(false, testObj.isPositionValid(new Position(10, 0)));
     }
 
     @Test
     public void check_position_is_invalid_10_10() {
         GameMap testObj = new GameMap();
-        assertEquals(false, testObj.isPositionValid(new Point(10, 10)));
+        assertEquals(false, testObj.isPositionValid(new Position(10, 10)));
     }
 }

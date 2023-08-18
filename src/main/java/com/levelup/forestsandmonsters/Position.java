@@ -5,7 +5,7 @@ public class Position {
 
     Point coordinates; 
     
-    Position(int x, int y){
+    public Position(int x, int y){
         coordinates = new Point(x, y); 
     }
 }
