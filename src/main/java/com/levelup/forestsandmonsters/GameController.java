@@ -14,7 +14,7 @@ public class GameController {
         public int moveCount = -100;
 
         public String toString(String name, Point currPos, int moveCount){
-            return "";
+            return name +" is on poisition " + currPos.x + "," + currPos.y + " and has a move count of " + moveCount;
         }
     }
 

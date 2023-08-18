@@ -26,6 +26,7 @@ public class GameStatusTest {
         assertEquals("Cesar", gs.characterName);
 
         status = gs.toString(gs.characterName, gs.currentPosition, gs.moveCount);
+        System.out.println(status);
         
         assertEquals("Cesar is on poisition 1,1 and has a move count of 2", status);
     }
