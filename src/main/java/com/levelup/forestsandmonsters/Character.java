@@ -15,8 +15,11 @@ public class Character {
   }
 
   public String getName() {
-
     return this.name;
+  }
+
+  public void setName(String charName) {
+    this.name = charName;
   }
 
   public void enterMap(GameMap map) {
